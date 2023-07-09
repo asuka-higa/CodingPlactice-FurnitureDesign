@@ -223,6 +223,8 @@ dt {
 
 .about-main {
   font-size: 0.875rem;
+  min-height: calc(100vh - 160px);
+  padding-bottom: 0;
 
   .about-text {
     max-width: 600px;
@@ -230,6 +232,21 @@ dt {
     margin-bottom: 40px;
   }
 }
+
+/*-------------------
+  footer(about.html)
+--------------------*/
+
+.for-about-footer {
+  position: relative;
+}
+
+.about-footer {
+  position: absolute;
+  bottom: 0;
+}
+
+
 
 /*-------------------
   main(company.html)
@@ -312,7 +329,6 @@ dt {
   }
 }
 
-
 /*-------------------
     レスポンシブ
 --------------------*/
@@ -320,7 +336,7 @@ dt {
 @media screen and (max-width:900px) {
 
   /*-------------------
-      footer
+      共通footer
   -------------------*/
   .footer,
   .about-footer {
@@ -347,7 +363,7 @@ dt {
   }
 
   /*-------------------
-  main(company.html)
+    main(company.html)
   --------------------*/
   .company-main {
     .company-dl {
@@ -370,7 +386,7 @@ dt {
   }
 
   /*-------------------
-  main(item.html)
+      main(item.html)
   --------------------*/
 
   .item {
