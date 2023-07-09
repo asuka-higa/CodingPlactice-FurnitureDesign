@@ -1,0 +1,394 @@
+/*-------------------
+      共通部分
+--------------------*/
+
+body {
+  font-size: 100%;
+  color: #333333;
+}
+
+.wrapper {
+  width: 100%;
+  max-width: 1360px;
+  padding: 0 40px;
+  margin: 0 auto;
+}
+
+a {
+  cursor: pointer;
+  transition: opacity .5s ease;
+
+  &:hover {
+    opacity: 0.7;
+  }
+}
+
+dt {
+  font-weight: normal;
+}
+
+/*-------------------
+      共通header
+--------------------*/
+
+.header {
+  width: 100%;
+  position: fixed;
+  top: 0;
+  background-color: #fff;
+  z-index: 2;
+
+  &-container {
+    height: 80px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .site-title {
+    font-size: 1.3rem;
+    font-weight: 700;
+  }
+
+  .hamb-btn {
+    height: 40px;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    z-index: 3;
+
+    &-bar {
+      display: block;
+      content: "";
+      height: 2px;
+      width: 30px;
+      background-color: #333333;
+      border-radius: 4px;
+
+      &.active {
+        background-color: #fff;
+      }
+    }
+
+    .top-bar {
+      margin: 0 0 6px 0;
+      transition: all .5s;
+
+      &.active {
+        transform: translateY(8px) rotate(-45deg);
+      }
+    }
+
+    .bottom-bar {
+      transition: all .5s;
+
+      &.active {
+        transform: rotate(45deg);
+      }
+    }
+  }
+
+  .hamb-overlay {
+    opacity: 0;
+
+    &.active {
+      opacity: 1;
+      display: block;
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100vh;
+      background: #000000be;
+      color: #fff;
+    }
+
+    .hamb-nav {
+      position: fixed;
+      padding: 40px 0 0 48px;
+      left: -200px;
+      display: block;
+
+      &.active {
+        left: 0px;
+        transition: left .5s;
+      }
+
+
+      &-li {
+        font-size: 0.875rem;
+        margin: 0 0 18px 0;
+      }
+    }
+  }
+}
+
+/*-------------------
+      共通footer
+--------------------*/
+
+.footer {
+  display: flex;
+  justify-content: space-between;
+  padding: 24px 40px;
+
+  .sns-ul {
+    display: flex;
+
+    .sns-li {
+      font-size: .75rem;
+      margin-right: 32px;
+    }
+  }
+
+  .copyright {
+    font-size: .625rem;
+  }
+}
+
+/*-------------------
+    main共通部分
+--------------------*/
+.page-title {
+  font-size: 0.875rem;
+  height: 90px;
+  line-height: 90px;
+}
+
+/*-------------------
+  main(index.html)
+--------------------*/
+
+.main {
+  margin-top: 80px;
+  padding-bottom: 128px;
+}
+
+.products {
+
+  &-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-auto-rows: auto;
+    gap: 40px 3%;
+    margin-bottom: 48px;
+  }
+
+  &-img {
+    display: block;
+    width: 100%;
+    margin: 0 0 8px 0;
+  }
+
+  &-info {
+    font-size: 0.75rem;
+    line-height: 18px;
+  }
+}
+
+.view-more {
+  display: block;
+  font-size: 0.875rem;
+  text-align: center;
+}
+
+/*-----------------------
+  main(products1/2.html)
+------------------------*/
+
+.page-nation {
+
+  &-ol {
+    display: flex;
+    width: fit-content;
+    margin: 0 auto;
+    font-size: 0.875rem;
+    text-align: center;
+  }
+
+  &-li {
+    margin-right: 40px;
+
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+}
+
+
+/*-------------------
+  main(about.html)
+--------------------*/
+
+.about-main {
+  font-size: 0.875rem;
+
+  .about-text {
+    max-width: 600px;
+    line-height: 26px;
+    margin-bottom: 40px;
+  }
+}
+
+/*-------------------
+  main(company.html)
+--------------------*/
+
+.company-main {
+  font-size: 0.875rem;
+
+  .company-dl {
+    max-width: 600px;
+    display: flex;
+    flex-wrap: wrap;
+    line-height: 24px;
+    margin-bottom: 24px;
+
+    .company-dt,
+    .company-dd {
+      padding: 16px 0 16px 8px;
+      border-bottom: 1px solid #DCDBDB;
+
+      &:last-of-type {
+        border-bottom: none;
+      }
+    }
+
+    .company-dt {
+      width: 176px;
+    }
+  }
+
+  .company-dd {
+    width: 424px;
+  }
+
+  .map {
+    filter: grayscale(100%);
+    width: 100%;
+    max-width: 600px;
+    height: 300px;
+  }
+}
+
+/*-------------------
+  main(item.html)
+--------------------*/
+
+.item {
+  &-container {
+    max-width: 800px;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 72px;
+  }
+
+  &-img {
+    width: 400px;
+  }
+
+  &-info {
+    width: 336px;
+    font-size: 0.875rem;
+    line-height: 20px;
+
+    .item-text {
+      margin-bottom: 40px;
+    }
+
+    .item-dl {
+      display: flex;
+      flex-wrap: wrap;
+
+      .item-dt {
+        width: 30%;
+      }
+
+      .item-dd {
+        width: 70%;
+      }
+    }
+  }
+}
+
+
+/*-------------------
+    レスポンシブ
+--------------------*/
+
+@media screen and (max-width:900px) {
+
+  /*-------------------
+      footer
+  -------------------*/
+  .footer,
+  .about-footer {
+    flex-direction: column;
+  }
+
+  .sns-ul {
+    margin-bottom: 16px;
+  }
+
+  /*-------------------
+      main(index.html)
+  -------------------*/
+
+  .main {
+    padding-bottom: 96px;
+  }
+
+  .products {
+    &-container {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 40px 5%;
+    }
+  }
+
+  /*-------------------
+  main(company.html)
+  --------------------*/
+  .company-main {
+    .company-dl {
+      display: block;
+
+      .company-dt,
+      .company-dd {
+        width: 100%;
+      }
+
+      .company-dt {
+        border-bottom: none;
+        padding: 16px 0 8px 8px;
+      }
+
+      .company-dd {
+        padding: 4px 0 16px 8px;
+      }
+    }
+  }
+
+  /*-------------------
+  main(item.html)
+  --------------------*/
+
+  .item {
+    &-container {
+      display: block;
+    }
+
+    &-img {
+      width: 100%;
+      margin-bottom: 40px;
+    }
+
+    &-info {
+      width: 100%;
+
+      .item-text {
+        margin-bottom: 36px;
+      }
+    }
+  }
+}

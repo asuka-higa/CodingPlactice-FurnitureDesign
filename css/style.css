@@ -1,0 +1,322 @@
+@charset "UTF-8";
+/*-------------------
+      共通部分
+--------------------*/
+body {
+  font-size: 100%;
+  color: #333333;
+}
+
+.wrapper {
+  width: 100%;
+  max-width: 1360px;
+  padding: 0 40px;
+  margin: 0 auto;
+}
+
+a {
+  cursor: pointer;
+  transition: opacity 0.5s ease;
+}
+a:hover {
+  opacity: 0.7;
+}
+
+dt {
+  font-weight: normal;
+}
+
+/*-------------------
+      共通header
+--------------------*/
+.header {
+  width: 100%;
+  position: fixed;
+  top: 0;
+  background-color: #fff;
+  z-index: 2;
+}
+.header-container {
+  height: 80px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.header .site-title {
+  font-size: 1.3rem;
+  font-weight: 700;
+}
+.header .hamb-btn {
+  height: 40px;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  z-index: 3;
+}
+.header .hamb-btn-bar {
+  display: block;
+  content: "";
+  height: 2px;
+  width: 30px;
+  background-color: #333333;
+  border-radius: 4px;
+}
+.header .hamb-btn-bar.active {
+  background-color: #fff;
+}
+.header .hamb-btn .top-bar {
+  margin: 0 0 6px 0;
+  transition: all 0.5s;
+}
+.header .hamb-btn .top-bar.active {
+  transform: translateY(8px) rotate(-45deg);
+}
+.header .hamb-btn .bottom-bar {
+  transition: all 0.5s;
+}
+.header .hamb-btn .bottom-bar.active {
+  transform: rotate(45deg);
+}
+.header .hamb-overlay {
+  opacity: 0;
+}
+.header .hamb-overlay.active {
+  opacity: 1;
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.7450980392);
+  color: #fff;
+}
+.header .hamb-overlay .hamb-nav {
+  position: fixed;
+  padding: 40px 0 0 48px;
+  left: -200px;
+  display: block;
+}
+.header .hamb-overlay .hamb-nav.active {
+  left: 0px;
+  transition: left 0.5s;
+}
+.header .hamb-overlay .hamb-nav-li {
+  font-size: 0.875rem;
+  margin: 0 0 18px 0;
+}
+
+/*-------------------
+      共通footer
+--------------------*/
+.footer {
+  display: flex;
+  justify-content: space-between;
+  padding: 24px 40px;
+}
+.footer .sns-ul {
+  display: flex;
+}
+.footer .sns-ul .sns-li {
+  font-size: 0.75rem;
+  margin-right: 32px;
+}
+.footer .copyright {
+  font-size: 0.625rem;
+}
+
+/*-------------------
+    main共通部分
+--------------------*/
+.page-title {
+  font-size: 0.875rem;
+  height: 90px;
+  line-height: 90px;
+}
+
+/*-------------------
+  main(index.html)
+--------------------*/
+.main {
+  margin-top: 80px;
+  padding-bottom: 128px;
+}
+
+.products-container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-auto-rows: auto;
+  gap: 40px 3%;
+  margin-bottom: 48px;
+}
+.products-img {
+  display: block;
+  width: 100%;
+  margin: 0 0 8px 0;
+}
+.products-info {
+  font-size: 0.75rem;
+  line-height: 18px;
+}
+
+.view-more {
+  display: block;
+  font-size: 0.875rem;
+  text-align: center;
+}
+
+/*-----------------------
+  main(products1/2.html)
+------------------------*/
+.page-nation-ol {
+  display: flex;
+  width: -moz-fit-content;
+  width: fit-content;
+  margin: 0 auto;
+  font-size: 0.875rem;
+  text-align: center;
+}
+.page-nation-li {
+  margin-right: 40px;
+}
+.page-nation-li:last-child {
+  margin-right: 0;
+}
+
+/*-------------------
+  main(about.html)
+--------------------*/
+.about-main {
+  font-size: 0.875rem;
+}
+.about-main .about-text {
+  max-width: 600px;
+  line-height: 26px;
+  margin-bottom: 40px;
+}
+
+/*-------------------
+  main(company.html)
+--------------------*/
+.company-main {
+  font-size: 0.875rem;
+}
+.company-main .company-dl {
+  max-width: 600px;
+  display: flex;
+  flex-wrap: wrap;
+  line-height: 24px;
+  margin-bottom: 24px;
+}
+.company-main .company-dl .company-dt,
+.company-main .company-dl .company-dd {
+  padding: 16px 0 16px 8px;
+  border-bottom: 1px solid #DCDBDB;
+}
+.company-main .company-dl .company-dt:last-of-type,
+.company-main .company-dl .company-dd:last-of-type {
+  border-bottom: none;
+}
+.company-main .company-dl .company-dt {
+  width: 176px;
+}
+.company-main .company-dd {
+  width: 424px;
+}
+.company-main .map {
+  filter: grayscale(100%);
+  width: 100%;
+  max-width: 600px;
+  height: 300px;
+}
+
+/*-------------------
+  main(item.html)
+--------------------*/
+.item-container {
+  max-width: 800px;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 72px;
+}
+.item-img {
+  width: 400px;
+}
+.item-info {
+  width: 336px;
+  font-size: 0.875rem;
+  line-height: 20px;
+}
+.item-info .item-text {
+  margin-bottom: 40px;
+}
+.item-info .item-dl {
+  display: flex;
+  flex-wrap: wrap;
+}
+.item-info .item-dl .item-dt {
+  width: 30%;
+}
+.item-info .item-dl .item-dd {
+  width: 70%;
+}
+
+/*-------------------
+    レスポンシブ
+--------------------*/
+@media screen and (max-width: 900px) {
+  /*-------------------
+      footer
+  -------------------*/
+  .footer,
+  .about-footer {
+    flex-direction: column;
+  }
+  .sns-ul {
+    margin-bottom: 16px;
+  }
+  /*-------------------
+      main(index.html)
+  -------------------*/
+  .main {
+    padding-bottom: 96px;
+  }
+  .products-container {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 40px 5%;
+  }
+  /*-------------------
+  main(company.html)
+  --------------------*/
+  .company-main .company-dl {
+    display: block;
+  }
+  .company-main .company-dl .company-dt,
+  .company-main .company-dl .company-dd {
+    width: 100%;
+  }
+  .company-main .company-dl .company-dt {
+    border-bottom: none;
+    padding: 16px 0 8px 8px;
+  }
+  .company-main .company-dl .company-dd {
+    padding: 4px 0 16px 8px;
+  }
+  /*-------------------
+  main(item.html)
+  --------------------*/
+  .item-container {
+    display: block;
+  }
+  .item-img {
+    width: 100%;
+    margin-bottom: 40px;
+  }
+  .item-info {
+    width: 100%;
+  }
+  .item-info .item-text {
+    margin-bottom: 36px;
+  }
+}/*# sourceMappingURL=style.css.map */
